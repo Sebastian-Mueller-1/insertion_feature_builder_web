@@ -53,7 +53,7 @@ def upload_and_process():
             zip_buffer,
             mimetype="application/zip",
             as_attachment=True,
-            attachment_filename="processed_files.zip",
+            download_name="processed_files.zip",  # Corrected argument here
         )
 
     return render_template("upload.html")
