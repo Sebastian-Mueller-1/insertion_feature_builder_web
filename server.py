@@ -29,7 +29,7 @@ def upload_and_process():
                 file_paths.append(save_path)
 
         # Ensure we received all necessary files
-        if len(file_paths) < 5:
+        if len(file_paths) < 4:
             return "Error: Not all files were uploaded.", 400
 
         # Call the processing function from insertion_feature_builder_v7.py
