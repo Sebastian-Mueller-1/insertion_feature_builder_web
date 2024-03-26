@@ -9,6 +9,7 @@ from waitress import serve
 from insertion_feature_builder_v7 import process_data
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 200 * 1024 * 1024
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
