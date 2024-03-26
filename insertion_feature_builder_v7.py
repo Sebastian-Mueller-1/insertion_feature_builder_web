@@ -485,12 +485,12 @@ def process_data(
 
     # lift_off_df = pd.read_csv(lift_off_txt, comment="#", sep="\t")
 
-    print(source_df)
-    print("--------------------------------------")
-    print(annotation_df)
-    print("--------------------------------------")
-    print(remove_df)
-    print("--------------------------------------")
+    # print(source_df)
+    # print("--------------------------------------")
+    # print(annotation_df)
+    # print("--------------------------------------")
+    # print(remove_df)
+    # print("--------------------------------------")
 
     # ================ run bedtools overlap and make dfs ========================================================
     bed1 = BedTool(annotation_path)
@@ -498,7 +498,7 @@ def process_data(
 
     # Find overlapping regions
     overlap_regions = bed1.intersect(bed2, c=False, wo=True)
-    print(overlap_regions)
+    # print(overlap_regions)
 
     # Initalize column names for overlap regions pandas df. Ref will be the annotation, and source will be your source gff3 you provide to find overlaps with annotation gff3
     column_names = [
