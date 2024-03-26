@@ -35,6 +35,7 @@
             animation: rotateY 30s infinite linear;
             animation-delay: 2s; /* Delay before the animation starts */
             transform-style: preserve-3d;
+            transform: scale(0.8); /* Scale down the size */
         }
         h1 {
             width: 100%;
@@ -44,13 +45,32 @@
 
         @keyframes rotateY {
             0% {
-                transform: rotateY(0deg);
+                transform: rotateY(0deg) scale(0.8); /* Scale down during animation */
             }
             50% {
-                transform: rotateY(360deg);
+                transform: rotateY(360deg) scale(0.8);
             }
             100% {
-                transform: rotateY(360deg);
+                transform: rotateY(360deg) scale(0.8);
+            }
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .ascii-art {
+                transform: scale(0.6); /* Scale down further for smaller screens */
+            }
+
+            @keyframes rotateY {
+                0% {
+                    transform: rotateY(0deg) scale(0.6);
+                }
+                50% {
+                    transform: rotateY(360deg) scale(0.6);
+                }
+                100% {
+                    transform: rotateY(360deg) scale(0.6);
+                }
             }
         }
     </style>
@@ -60,7 +80,7 @@
     <div class="container">
         <div class="upload-form">
             <h2>Upload Files</h2>
-            <form action="/" method="post" enctype="multipart/form-data">
+ <form action="/" method="post" enctype="multipart/form-data">
                 <div>
         <label for="file1">1. Annotation File (GFF3):</label>
         <input type="file" name="file1" id="file1" required>
@@ -89,7 +109,7 @@
             </form>
         </div>
         <div class="ascii-art">
-                                                 ██████                                                
+                                                  ██████                                                
                                               ████░░▒▒  ████                                            
                                             ██▒▒░░░░▒▒░░░░░░██                                          
                                           ██░░▒▒░░░░▒▒░░░░░░▒▒██                                        
@@ -139,9 +159,10 @@
                                       ████████████▓▓▓▓██████████                                        
                                         ░░██▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓██░░                                        
                                           ██▓▓▒▒▓▓▒▒▒▒▒▒▒▒▓▓██                                          
-                                            ██▓▓████████████                                            
-            
+                                            ██▓▓████████████  
         </div>
     </div>
 </body>
 </html>
+
+
