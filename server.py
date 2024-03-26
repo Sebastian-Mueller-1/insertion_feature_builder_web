@@ -4,6 +4,7 @@ from io import BytesIO
 
 from flask import Flask, render_template, request, send_file
 from werkzeug.utils import secure_filename
+from waitress import serve
 
 from insertion_feature_builder_v7 import process_data
 
@@ -59,4 +60,4 @@ def upload_and_process():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    serve(app, host="0.0.0.0", port=8000)
