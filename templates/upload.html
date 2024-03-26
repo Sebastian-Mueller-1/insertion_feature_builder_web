@@ -32,11 +32,22 @@
             white-space: pre-wrap; 
             word-wrap: break-word;
             font-family: monospace;
+            animation: rotateY 10s infinite linear;
+            transform-style: preserve-3d;
         }
         h1 {
             width: 100%;
             text-align: center;
             margin-bottom: 20px; 
+        }
+
+        @keyframes rotateY {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
         }
     </style>
 </head>
