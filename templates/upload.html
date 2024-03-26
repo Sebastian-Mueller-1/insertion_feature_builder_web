@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Upload CSV Files</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
 </head>
 <body>
     <h2>Upload Files</h2>
     <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="file1" required><br><br>
-        <input type="file" name="file2" required><br><br>
-        <input type="file" name="file3" required><br><br>
+        <div>
+            <label for="file1">1. Annotation File (GFF3):</label>
+            <input type="file" name="file1" id="file1" required>
+            <p>Please upload the genome annotation file in GFF3 format.</p>
+        </div>
+        
+        <div>
+            <label for="file2">2. Insertion File (GFF3):</label>
+            <input type="file" name="file2" id="file2" required>
+            <p>Please upload the insertion locations file in GFF3 format.</p>
+        </div>
+        
+        <div>
+            <label for="file3">3. Template CSV:</label>
+            <input type="file" name="file3" id="file3" required>
+            <p>Please upload the template CSV file.</p>
+        </div>
+        
+        <div>
+            <label for="file4">4. Removal List CSV:</label>
+            <input type="file" name="file4" id="file4" required>
+            <p>Please upload the CSV file containing the list of features to remove.</p>
+        </div>
+        
+        <div>
+            <label for="file5">5. Lift-off Text File:</label>
+            <input type="file" name="file5" id="file5" required>
+            <p>Please upload the lift-off file containing gene model cross-references.</p>
+        </div>
+        
         <input type="submit" value="Upload">
     </form>
 </body>
