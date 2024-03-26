@@ -3,6 +3,7 @@ RUN apt-get update && apt-get install -y \
     bedtools \
     gcc \
     g++ \
+    zlib1g-dev \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY . /app
