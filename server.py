@@ -20,7 +20,7 @@ def upload_and_process():
         file_paths = []
 
         # Process each uploaded file
-        for i in range(1, 6):
+        for i in range(1, 5):
             file = request.files.get(f"file{i}")
             if file:
                 filename = secure_filename(file.filename)
