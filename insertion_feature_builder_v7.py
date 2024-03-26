@@ -440,7 +440,7 @@ def lift_off(lift_off_df, df_to_build):
 
 
 def process_data(
-    annotation_path, insertion_path, template_csv, remove_csv, lift_off_txt
+    annotation_path, insertion_path, remove_csv, lift_off_txt
 ):
     # need this df to build some genomic feature of interest information for down stream functions. In context of this project it is the Ds gfp allele gff file
     source_df = pd.read_csv(
