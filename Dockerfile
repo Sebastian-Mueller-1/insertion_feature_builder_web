@@ -33,5 +33,4 @@ COPY . /app
 # Start Gunicorn
 # Adjust the number of workers and threads as per your application's requirement
 # "server:app" should match the naming convention of your Flask application script and app instance
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "server:app"]
-
+CMD ["gunicorn", "--timeout", "600", "-w", "4", "-b", "0.0.0.0:5000", "server:app"]
