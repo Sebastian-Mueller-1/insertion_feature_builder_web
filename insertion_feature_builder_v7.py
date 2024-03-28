@@ -533,19 +533,29 @@ def process_data(
     output_df = pd.DataFrame()
 
     output_df = find_overlap_genomic_feature_identifier(output_df, source_df)
+    print("genomic feature ID funct done")
     output_df = find_overlap_gene_info(output_df, overlap_df, True)
+    print("gene overlap info func done")
     overlap_df_canonical_only = only_canonical(overlap_df)
+    print("make canonical only fgg func done")
     output_df = feature_class_overlap(
         output_df,
         overlap_df_canonical_only,
         ["exon", "CDS", "five_prime_UTR", "three_prime_UTR"],
     )
+    print("feature class func done")
     output_df = find_canonical_transcript_id(output_df, overlap_df_canonical_only)
+    print("canonical transcript ID funct done")
     canonical_only_annotation_df = only_canonical(annotation_df)
+    print("canonical only annotation func done")
     output_df = find_cds_metrics(output_df, canonical_only_annotation_df)
+    print('find cds metrics func done')
     multiple_warnings_df = multiple_associated_genes_warning(output_df)
+    print("multiple warnings func done")
     output_df = remove_specified_repeat_rows(remove_df, output_df)
+    print("remove row func done")
     output_df = lift_off(lift_off_df, output_df)
+    print("liftoff done")
 
     # Return the processed DataFrames
     return output_df, multiple_warnings_df, remove_df
