@@ -483,7 +483,7 @@ def process_data(
         remove_csv, names=["feature_ID", "Gene_ID", "Comment"], comment="#"
     )
 
-    # lift_off_df = pd.read_csv(lift_off_txt, comment="#", sep="\t")
+    lift_off_df = pd.read_csv(lift_off_txt, comment="#", sep="\t")
 
 
 
@@ -545,7 +545,7 @@ def process_data(
     output_df = find_cds_metrics(output_df, canonical_only_annotation_df)
     multiple_warnings_df = multiple_associated_genes_warning(output_df)
     output_df = remove_specified_repeat_rows(remove_df, output_df)
-    # output_df = lift_off(lift_off_df, output_df)
+    output_df = lift_off(lift_off_df, output_df)
 
     # Return the processed DataFrames
     return output_df, multiple_warnings_df, remove_df
